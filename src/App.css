@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+.divcenter {
+  min-height: 100vh;
+  background-image: url("./assets/images/backgroundImage.png");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  background-color: transparent !important;
+}
+
+.card-header {
+  background-color: #e5e5e5;
+}
+
+.rowList {
+  background-color: #e5e5e5;
+  border-radius: 10px;
+}
+
+.titleList {
+  font-weight: bold;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
