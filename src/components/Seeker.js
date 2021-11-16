@@ -40,7 +40,7 @@ const Seeker = (props) => {
                 dataConfig => dataConfig.key !== 'expirationDateSecond' &&
                     dataConfig.key !== 'pendingAmount'
             ),
-            'filedsBills'
+            'configBills'
         );                                    
         props.setDataState(false, 'loading');
         if (data.length === 1) {

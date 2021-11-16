@@ -3,12 +3,12 @@ import { amountFormat, convertDate, searchKey } from '../helpers/GenericsFunctio
 import ReactTooltip from 'react-tooltip';
 
 const DetailsBills = (props) => {
-    let filedsBills = props.dataConfig;
+    let configBills = props.dataConfig;
     let data = props.data;
 
     const drawDetailsBill = () => {
         return (
-            filedsBills.map((dataConfig, i) => {
+            configBills.map((dataConfig, i) => {
                 return (
                     <React.Fragment key={i}>
                         <div className='col-12'>
@@ -61,7 +61,7 @@ const DetailsBills = (props) => {
                             />
                         </div>
                         <div className='d-flex justify-content-center align-items-center flex-grow-1 titleList'>
-                            {searchKey(filedsBills, 'billId')} {data.billId}
+                            {searchKey(configBills, 'billId')} {data.billId}
                         </div>
 
                     </div>

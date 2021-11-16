@@ -2,7 +2,7 @@ const InitalState = {
     loading: false,
     option: 'seeker',
     data: [],
-    filedsBills: [],
+    configBills: [],
     detailsBill: {},
     numberBill: "",
     errors: {

@@ -3,7 +3,7 @@ import { amountFormat, convertDate, searchKey } from '../helpers/GenericsFunctio
 
 
 const ListInvoices = (props) => {
-    let { data, filedsBills } = props.data;
+    let { data, configBills } = props.data;
 
     const toPayFunction = (data) => {
         props.setDataState(data, 'detailsBill');
@@ -17,19 +17,19 @@ const ListInvoices = (props) => {
                     <div className='row rowList m-3 p-3' key={i}>
                         <div className='col-12 col-md-3'>
                             <div className='row'>
-                                <div className='col-12 titleList'>{searchKey(filedsBills, 'amountFirst')}</div>
+                                <div className='col-12 titleList'>{searchKey(configBills, 'amountFirst')}</div>
                                 <div className='col-12'>{`$${amountFormat(dataBill.amountFirst, 0)} COP`}</div>
                             </div>
                         </div>
                         <div className='col-12 col-md-3'>
                             <div className='row'>
-                                <div className='col-12 titleList'>{searchKey(filedsBills, 'billId')}</div>
+                                <div className='col-12 titleList'>{searchKey(configBills, 'billId')}</div>
                                 <div className='col-12'>{dataBill.billId}</div>
                             </div>
                         </div>
                         <div className='col-12 col-md-3'>
                             <div className='row'>
-                                <div className='col-12 titleList'>{searchKey(filedsBills, 'expirationDateFirst')}</div>
+                                <div className='col-12 titleList'>{searchKey(configBills, 'expirationDateFirst')}</div>
                                 <div className='col-12'>{convertDate(dataBill.expirationDateFirst)}</div>
                             </div>
                         </div>

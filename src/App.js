@@ -21,7 +21,7 @@ const App = (props) => {
       details: () => {
         return <DetailsBills
           data={props.bills.detailsBill}
-          dataConfig={props.bills.filedsBills}
+          dataConfig={props.bills.configBills}
           backFunction={backFunction}
         />
       },
