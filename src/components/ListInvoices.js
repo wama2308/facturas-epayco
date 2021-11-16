@@ -52,7 +52,7 @@ const ListInvoices = (props) => {
         <div className='row justify-content-center'>
             <div className='col-12 m-5'>
                 <div className="card">
-                    <div className="card-header d-flex">
+                    <div className="card-header bgCar d-flex">
                         <div>
                             <i
                                 className="fas fa-arrow-left fa-lg cursorPointer"

@@ -86,7 +86,7 @@ const Seeker = (props) => {
         <div className='row justify-content-center'>
             <div className='col-12 m-5'>
                 <div className="card">
-                    <div className="card-header">
+                    <div className="card-header bgCar titleList">
                         Consulte sus facturas
                     </div>
                     <div className="card-body m-3">
@@ -108,7 +108,7 @@ const Seeker = (props) => {
                         </div>
 
                     </div>
-                    <div className="card-footer">
+                    <div className="card-footer bgCar">
                         <button
                             type="button"
                             className="btn btn-primary w-100"

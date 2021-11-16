@@ -30,3 +30,7 @@
 .cursorPointer {
   cursor: pointer;
 }
+
+.bgCar {
+  background-color: rgb(209 203 203) !important;
+}

@@ -53,7 +53,7 @@ const DetailsBills = (props) => {
         <div className='row justify-content-center'>
             <div className='col-12 col-lg-8 m-5'>
                 <div className="card">
-                    <div className="card-header d-flex" style={{ backgroundColor: 'rgb(209 203 203)' }}>
+                    <div className="card-header bgCar d-flex">
                         <div>
                             <i
                                 className="fas fa-arrow-left fa-lg cursorPointer"
