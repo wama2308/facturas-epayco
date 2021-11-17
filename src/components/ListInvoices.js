@@ -6,8 +6,7 @@ const ListInvoices = (props) => {
     let { data, configBills } = props.data;
 
     const toPayFunction = (data) => {
-        props.setDataState(data, 'detailsBill');
-        props.setDataState('details', 'option');
+        props.changeOptionAction({ data: data, option: 'details' }, 'detailsBill')
     }
 
     const drawRows = () => {

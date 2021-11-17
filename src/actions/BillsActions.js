@@ -26,6 +26,16 @@ export const setDataStateError = (data, nodo) => dispatch => {
     });
 };
 
+export const changeOptionAction = (data, nodo) => dispatch => {
+    dispatch({
+        type: 'SET_CHANGE_OPTION',
+        payload: {
+            data,
+            nodo
+        }
+    });
+};
+
 export const getTokenAction = () => {
     return new Promise((resolve, reject) => {
         axios.post(

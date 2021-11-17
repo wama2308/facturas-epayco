@@ -36,6 +36,15 @@ const BillsReducers = (state = InitalState, action) => {
                 }
             };
         }
+        case "SET_CHANGE_OPTION": {
+            return {
+                ...state,
+                option: action.payload.data.option,
+                [action.payload.nodo]: action.payload.data.data
+            };
+        }
+
+
         default:
             return state;
     }

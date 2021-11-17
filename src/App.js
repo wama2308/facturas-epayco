@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Seeker from "./components/Seeker";
 import ListInvoices from "./components/ListInvoices";
 import DetailsBills from "./components/DetailsBills";
-import { setDataState } from "./actions/BillsActions";
+import { setDataState, changeOptionAction } from "./actions/BillsActions";
 
 const App = (props) => {
   let { option, data, detailsBill } = props.bills
@@ -14,7 +14,7 @@ const App = (props) => {
       list: () => {
         return <ListInvoices
           data={props.bills}
-          setDataState={props.setDataState}
+          changeOptionAction={props.changeOptionAction}
           backFunction={backFunction}
         />
       },
@@ -30,20 +30,16 @@ const App = (props) => {
   }
 
   const backFunction = () => {
+    props.setDataState('', 'numberBill');
     if (option === 'list') {
-      props.setDataState('seeker', 'option');
-      props.setDataState('', 'numberBill');
-      props.setDataState([], 'data');
+      props.changeOptionAction({ data: [], option: 'seeker' }, 'data')
     }
     if (option === 'details') {
       if (!data.length && Object.keys(detailsBill).length) {
-        props.setDataState('seeker', 'option');
-        props.setDataState('', 'numberBill');
-        props.setDataState({}, 'detailsBill');
+        props.changeOptionAction({ data: {}, option: 'seeker' }, 'detailsBill')
       }
       if (data.length > 1) {
-        props.setDataState('list', 'option');
-        props.setDataState({}, 'detailsBill');
+        props.changeOptionAction({ data: {}, option: 'list' }, 'detailsBill')
       }
     }
   }
@@ -63,6 +59,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setDataState: (data, nodo) => dispatch(setDataState(data, nodo)),
+  changeOptionAction: (data, nodo) => dispatch(changeOptionAction(data, nodo)),
 });
 
 export default connect(

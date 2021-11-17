@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {
     setDataState,
     setDataStateError,
+    changeOptionAction,
     getTokenAction,
     checkInvoicesAction,
     checkFiledsInvoicesAction
@@ -11,7 +12,7 @@ import {
 
 const Seeker = (props) => {
     let { numberBill, errors, loading } = props.bills
-    
+
     const handleInputChange = (event) => {
         event.preventDefault();
         let name = event.target.name;
@@ -41,15 +42,13 @@ const Seeker = (props) => {
                     dataConfig.key !== 'pendingAmount'
             ),
             'configBills'
-        );                                    
+        );
         props.setDataState(false, 'loading');
         if (data.length === 1) {
-            props.setDataState(data[0], 'detailsBill');
-            props.setDataState('details', 'option');
+            props.changeOptionAction({ data: data[0], option: 'details' }, 'detailsBill')
         }
         if (data.length > 1) {
-            props.setDataState(data, 'data');
-            props.setDataState('list', 'option');
+            props.changeOptionAction({ data: data, option: 'list' }, 'data')            
         }
 
     }
@@ -66,7 +65,7 @@ const Seeker = (props) => {
                             checkFiledsInvoicesAction(token)
                                 .then((config) => {
                                     changeOption(invoces, config);
-                                  
+
                                 })
                                 .catch(() => {
                                     props.setDataState(false, 'loading');
@@ -138,6 +137,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     setDataState: (data, nodo) => dispatch(setDataState(data, nodo)),
     setDataStateError: (data, nodo) => dispatch(setDataStateError(data, nodo)),
+    changeOptionAction: (data, nodo) => dispatch(changeOptionAction(data, nodo)),
 });
 
 export default connect(
