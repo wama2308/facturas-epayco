@@ -38,9 +38,7 @@ const Seeker = (props) => {
     const changeOption = (data, config) => {
         props.setDataState(
             config.filter(
-                dataConfig => dataConfig.key !== 'expirationDateSecond' &&
-                    dataConfig.key !== 'pendingAmount'
-            ),
+                dataConfig => dataConfig.key !== 'expirationDateSecond'),
             'configBills'
         );
         props.setDataState(false, 'loading');
