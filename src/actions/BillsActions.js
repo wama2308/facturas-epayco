@@ -98,7 +98,7 @@ export const checkInvoicesAction = (token, data) => {
     })
 };
 
-export const checkFiledsInvoicesAction = (token) => {
+export const checkConfigInvoicesAction = (token) => {
     return new Promise((resolve, reject) => {
         axios.post(
             `https://apify.epayco.co//billcollect/proyect/config/consult`,

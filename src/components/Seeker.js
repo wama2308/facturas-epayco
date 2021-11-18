@@ -6,7 +6,7 @@ import {
     changeOptionAction,
     getTokenAction,
     checkInvoicesAction,
-    checkFiledsInvoicesAction
+    checkConfigInvoicesAction
 } from "../actions/BillsActions"
 
 
@@ -60,7 +60,7 @@ const Seeker = (props) => {
                 .then((token) => {
                     checkInvoicesAction(token, numberBill)
                         .then((invoces) => {
-                            checkFiledsInvoicesAction(token)
+                            checkConfigInvoicesAction(token)
                                 .then((config) => {
                                     changeOption(invoces, config);
 
